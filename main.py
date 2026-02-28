@@ -1,54 +1,57 @@
 # ****************************************************************************
 # प्रोजेक्ट: शिव एआई (SHIV AI) | मालिक: श्री राम नाग (Shri Ram nag)
-# स्थान: रूट डायरेक्टरी (Root Directory)
-# कार्य: २४/७ सिस्टम मॉनिटरिंग और २७+ बॉट्स का सफल संचालन
+# फाइल: main.py (The Security-First Engine)
 # ****************************************************************************
 
-import os
-import sys
 import subprocess
+import sys
+import os
 import time
+from config import config # आपकी नई सुरक्षा फाइल
 
-def setup_environment():
-    """सिस्टम की सेहत की जाँच करना (Health Check)"""
-    print("🔱 शिव एआई (Shiv AI) जाग्रत हो रहा है...")
+def check_system_integrity():
+    """सिस्टम की सुरक्षा और फाइलों की जाँच करना"""
+    print(f"🔱 {config.ai_name} जाग्रत हो रहा है...")
     time.sleep(1)
-    
-    # १. जरूरी फोल्डर्स की जाँच
-    required_folders = ['app/services', 'app/utils', 'app/uploads']
-    for folder in required_folders:
+
+    # १. सुरक्षा जाँच (API Keys की निगरानी)
+    if not config.validate_security():
+        print("❌ सिस्टम रुक गया है। कृपया अपनी .env फाइल में असली चाबियाँ डालें।")
+        sys.exit(1)
+
+    # २. जरूरी डायरेक्टरी की जाँच
+    folders = ['app/services', 'app/utils', 'app/uploads', 'app/assets/voice_samples']
+    for folder in folders:
         if not os.path.exists(folder):
-            print(f"⚠️ चेतावनी: {folder} नहीं मिला, निर्माण किया जा रहा है...")
             os.makedirs(folder)
+            print(f"📁 फोल्डर बनाया गया: {folder}")
 
-    # २. हकलाने से रोकने वाले यूटिलिटी की जाँच
+    # ३. हकलाने से रोकने वाले यूटिलिटी की जाँच
     if not os.path.exists('app/utils/response_formatter.py'):
-        print("❌ त्रुटि: हकलाने का इलाज (formatter) गायब है।")
-    
-    print("✅ सभी २७+ बॉट्स लिंक होने के लिए तैयार हैं।")
+        print("⚠️ चेतावनी: 'response_formatter' गायब है, नंबर हकला सकते हैं।")
 
-def start_shiv_engine():
-    """स्ट्रीमलिट रिस्पॉन्सिव इंटरफेस को लॉन्च करना"""
-    print(f"🚀 मालिक श्री राम नाग जी, आपका डिजिटल साम्राज्य अब लाइव हो रहा है...")
+    print(f"✅ मालिक {config.owner}, सभी ३२+ बॉट्स लिंक होने के लिए तैयार हैं।")
+
+def launch_interface():
+    """रिस्पॉन्सिव इंटरफेस (Streamlit) को शुरू करना"""
+    print(f"🚀 {config.ai_name} अब लाइव हो रहा है (टर्बो मोड)...")
     
-    # स्ट्रीमलिट को टर्बो मोड में चलाना (बिना किसी फालतू नोटिफिकेशन के)
+    # के अनुसार मोबाइल और डेस्कटॉप के लिए बेस्ट सेटिंग्स
     cmd = [
         "streamlit", "run", "app.py",
-        "--server.headfull", "False",
-        "--theme.base", "dark"
+        "--server.port", "8501",
+        "--theme.base", "dark",
+        "--client.toolbarMode", "hidden"
     ]
     
     try:
-        # यह कमांड आपके मोबाइल या डेस्कटॉप के ब्राउज़र में 'app.py' को खोल देगी
         subprocess.run(cmd, check=True)
     except KeyboardInterrupt:
-        print("\n🔱 शिव एआई अब विश्राम कर रहा है। प्रणाम, श्री राम नाग जी।")
+        print(f"\n🔱 प्रणाम {config.owner} जी, शिव एआई अब विश्राम कर रहा है।")
     except Exception as e:
-        print(f"🚨 गंभीर त्रुटि: {str(e)}")
+        print(f"🚨 गंभीर एरर: {str(e)}")
 
 if __name__ == "__main__":
-    # १. पहले वातावरण तैयार करो
-    setup_environment()
-    # २. फिर इंजन स्टार्ट करो
-    start_shiv_engine()
-  
+    # पहले सुरक्षा चेक करो, फिर लॉन्च करो
+    check_system_integrity()
+    launch_interface()
