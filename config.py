@@ -1,14 +1,28 @@
+# ****************************************************************************
+# प्रोजेक्ट: शिव एआई (SHIV AI) | फाइल: config.py (Security Monitor)
+# ****************************************************************************
+
 import os
+from dotenv import load_dotenv
 
-# शिव एआई की मुख्य सेटिंग्स
-OWNER_NAME = "Shri Ram nag"
-AI_NAME = "Shiv AI"
+# .env फाइल से डेटा लोड करना
+load_dotenv()
 
-# एपीआई और मॉडल सेटिंग्स
-GROQ_API_KEY = "अपनी_की_यहाँ_डालें"
-MODEL_NAME = "llama3-70b-8192"
+class ShivConfig:
+    def __init__(self):
+        self.owner = os.getenv("OWNER_NAME", "Shri Ram nag")
+        self.ai_name = os.getenv("AI_NAME", "Shiv AI")
+        self.api_key = os.getenv("GRQ_API_KEY")
+        self.security_level = os.getenv("SECURITY_LEVEL", "elite")
 
-# फाइलों के रास्ते (Paths)
-USER_DATA_PATH = "database/learning_data/userdata.txt"
-SYSTEM_CONTEXT_PATH = "database/learning_data/system_context.txt"
+    def validate_security(self):
+        """चाबियों की सुरक्षा जाँच (Monitoring)"""
+        if not self.api_key or "here" in self.api_key or "यहाँ" in self.api_key:
+            print(f"🚨 सुरक्षा अलर्ट: {self.owner} जी, आपकी API Key सुरक्षित नहीं है!")
+            return False
+        
+        print(f"✅ सुरक्षा चक्र सक्रिय: {self.ai_name} पूरी तरह सुरक्षित है।")
+        return True
 
+# ग्लोबल कॉन्फ़िगरेशन ऑब्जेक्ट
+config = ShivConfig()
