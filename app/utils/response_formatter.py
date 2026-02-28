@@ -1,18 +1,26 @@
-# यह फाइल सुनिश्चित करती है कि शिव एआई बिना हकलाए बोले
+# श्री राम नाग जी, यह फाइल सुनिश्चित करती है कि शिव एआई नंबरों पर न हकलाए।
 import re
 
-def clean_for_speech(text):
-    # नंबरों को शब्दों में बदलने का शब्दकोश
-    num_map = {
+def clean_shiv_response(text):
+    # नंबरों को हिंदी शब्दों में बदलने का मैप
+    number_to_hindi = {
         '0': 'शून्य', '1': 'एक', '2': 'दो', '3': 'तीन', '4': 'चार',
         '5': 'पांच', '6': 'छह', '7': 'सात', '8': 'आठ', '9': 'नौ'
     }
+
+    # १. अंकों को ढूंढना और उन्हें शब्दों से बदलना
+    new_text = ""
+    for char in text:
+        if char in number_to_hindi:
+            new_text += number_to_hindi[char]
+        else:
+            new_text += char
+
+    # २. डॉट (.) को कोमा (,) में बदलना ताकि एआई वहां थोड़ा रुके (Pause ले)
+    # इससे एआई के बोलने का तरीका और भी प्राकृतिक हो जाएगा।
+    new_text = new_text.replace(".", ",")
     
-    # अंकों को ढूंढना और बदलना
-    for digit, word in num_map.items():
-        text = text.replace(digit, word)
-    
-    # डॉट को कोमा में बदलना ताकि एआई रुके
-    text = text.replace(".", ",")
-    return text
-  
+    # ३. इंग्लिश शब्दों को आसान बनाना (अगर जरूरत हो)
+    return new_text
+
+# उदाहरण: "Model 5" बन जाएगा "Model पांच"
