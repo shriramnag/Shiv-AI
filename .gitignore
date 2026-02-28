@@ -1,29 +1,26 @@
 # ****************************************************************************
-# प्रोजेक्ट: शिव एआई (SHIV AI) | मालिक: श्री राम नाग (Shri Ram nag)
-# कार्य: फालतू और गुप्त फाइलों को गिटहब पर जाने से रोकना
+# प्रोजेक्ट: शिव एआई (SHIV AI) | .gitignore (The Digital Shield)
 # ****************************************************************************
 
-# १. पायथन का कचरा (Python Junk)
+# १. असली चाबियों वाली फाइलों को रोकना (Most Important)
+.env
+.env.local
+.env.*
+secrets.toml
+
+# २. पायथन और सिस्टम का कचरा
 __pycache__/
 *.py[cod]
 *$py.class
-.env
-.venv
+.venv/
 env/
 venv/
-build/
-dist/
-
-# २. स्ट्रीमलिट और ब्राउज़र का कैश
-.streamlit/
-.sass-cache/
-
-# ३. टेंपरेरी और लॉग फाइलें
-*.log
-app/uploads/temp/
 .DS_Store
 
-# ४. गुप्त जानकारी (Secret Data)
-secrets.toml
-.env
+# ३. टेंपरेरी फाइल्स और लॉग्स
+*.log
+app/uploads/temp/
+.streamlit/
 
+# ४. इस फाइल को अपलोड होने दें (Template Only)
+! .env.example
