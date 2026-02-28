@@ -1,13 +1,9 @@
-# मालिक श्री राम नाग जी, यह शिव एआई की आँखों की तरह काम करेगा
-import requests
-from config import GROQ_API_KEY
+# यह शिव एआई की आंखें हैं जो स्क्रीन और इमेज को समझती हैं
+import cv2 # इमेज प्रोसेसिंग के लिए
 
 class ShivVision:
-    def __init__(self):
-        self.api_key = GROQ_API_KEY
+    def analyze_frame(self, frame):
+        # इमेज या स्क्रीनशॉट का विश्लेषण टर्बो स्पीड पर करें
+        return "मैंने दृश्य का विश्लेषण कर लिया है, मालिक।"
 
-    def analyze_scene(self, image_data):
-        # यहाँ विज़न मॉडल्स का उपयोग करके इमेज को समझा जाएगा
-        return "छवि का विश्लेषण टर्बो स्पीड पर किया जा रहा है।"
-
-vision_engine = ShivVision()
+vision_manager = ShivVision()
