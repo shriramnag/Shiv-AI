@@ -9,3 +9,4 @@ opencv-python
 pillow
 pyttsx3
 streamlit
+TTS
