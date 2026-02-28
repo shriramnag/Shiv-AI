@@ -1,15 +1,13 @@
-# श्री राम नाग जी, यह विजन लेयर इमेज और स्क्रीन को समझने के लिए है।
+# मालिक श्री राम नाग जी, यह शिव एआई की आँखों की तरह काम करेगा
 import requests
 from config import GROQ_API_KEY
 
-class ShivVisionService:
+class ShivVision:
     def __init__(self):
         self.api_key = GROQ_API_KEY
 
-    def analyze_image(self, image_path):
-        # भविष्य में यहाँ विजन मॉडल (जैसे LLaVA या GPT-4o) का एपीआई लगेगा।
-        print(f"इमेज विश्लेषण शुरू: {image_path}")
-        return "मैंने इमेज देख ली है, मालिक। यह एक कोडिंग स्क्रीन लग रही है।"
+    def analyze_scene(self, image_data):
+        # यहाँ विज़न मॉडल्स का उपयोग करके इमेज को समझा जाएगा
+        return "छवि का विश्लेषण टर्बो स्पीड पर किया जा रहा है।"
 
-vision_manager = ShivVisionService()
-
+vision_engine = ShivVision()
