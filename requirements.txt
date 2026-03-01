@@ -10,3 +10,7 @@ pillow
 pyttsx3
 streamlit
 TTS
+transformers
+torch
+gTTS
+requests
