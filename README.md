@@ -1,18 +1,19 @@
-# 🚩 शिव एआई (Shiv AI) मास्टर कंट्रोल
+# 🚩 शिव एआई (Shiv AI) कंट्रोल सेंटर
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shriramnag/Shiv-AI/blob/main/ShivAi.ipynb)
+यहाँ से आप अपने एआई को कंट्रोल और ट्रेन कर सकते हैं:
 
-**मालिक:** श्री राम नाग
-**लक्ष्य:** ३२ बॉट्स और टर्बो स्पीड वॉइस क्लोनिंग।
+### 1. 🧠 एआई को ज्ञान दें (ट्रेनिंग सेंटर)
+इस बटन का उपयोग तब करें जब आप इंटरनेट (Wikipedia/GitHub) से नया डेटा डाउनलोड करके एआई को ट्रेन करना चाहते हैं।
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shriramnag/Shiv-AI/blob/main/ShivAI_Trainer.ipynb)
 
-### 🛠️ सेटअप निर्देश:
-१. ऊपर दिए गए **Open In Colab** बटन पर क्लिक करें।
-२. कोलाब में जाकर `Runtime` -> `Run all` करें।
-३. शिव एआई आपसे बात करने के लिए तैयार हो जाएगा।
+### 2. 💬 एआई से बात करें (चेक/टेस्ट सेंटर)
+इस बटन का उपयोग यह चेक करने के लिए करें कि ट्रेनिंग के बाद शिव एआई कितना ज्ञानी हुआ है और वह कैसे जवाब दे रहा है।
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shriramnag/Shiv-AI/blob/main/ShivAl.ipynb)
 
 ---
-*यह प्रोजेक्ट श्री राम नाग जी के विशेष निर्देशों पर आधारित है।*
-)
+**मालिक:** श्री राम नाग 
+**लक्ष्य:** ३२ बॉट्स और टर्बो स्पीड वॉइस क्लोनिंग।
+
 
 
 
