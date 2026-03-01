@@ -1,3 +1,24 @@
+# 🚩 शिव एआई (Shiv AI) मास्टर कंट्रोल
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shriramnag/Shiv-AI/blob/main/ShivAi.ipynb)
+
+**मालिक:** श्री राम नाग
+**लक्ष्य:** ३२ बॉट्स और टर्बो स्पीड वॉइस क्लोनिंग।
+
+### 🛠️ सेटअप निर्देश:
+१. ऊपर दिए गए **Open In Colab** बटन पर क्लिक करें।
+२. कोलाब में जाकर `Runtime` -> `Run all` करें।
+३. शिव एआई आपसे बात करने के लिए तैयार हो जाएगा।
+
+---
+*यह प्रोजेक्ट श्री राम नाग जी के विशेष निर्देशों पर आधारित है।*
+)
+
+
+
+
+
+
 # Shiv-AI
 
 
